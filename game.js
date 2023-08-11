@@ -5,15 +5,16 @@ const options = {
 };
 
 let scoreObj = {
-    playerScore : 0,
-    computerScore : 0,
-}
-
-
+  playerScore: 0,
+  computerScore: 0,
+};
 const getComputerChoice = () => options[Math.floor(Math.random() * 3)];
 
 function playRound(playerSelectionRaw, computerSelection) {
   let playerSelection = playerSelectionRaw.toLowerCase(); // make case insensitive, could perhaps use locale.compare
+  console.log(`computerSelection ${computerSelection}`);
+  console.log(`playerSelection ${playerSelection}`);
+
 
   if (!Object.values(options).includes(playerSelection)) return "FAIL!";
   if (playerSelection === computerSelection) return "Tie!";
@@ -21,18 +22,16 @@ function playRound(playerSelectionRaw, computerSelection) {
   return (playerSelection === "rock" && computerSelection === "scissor") ||
     (playerSelection === "scissor" && computerSelection === "paper") ||
     (playerSelection === "paper" && computerSelection === "rock")
-    ? "You win! " + playerSelection + " beats " // could have used template literals
-    : "You loose! " + computerSelection + " beats " + playerSelection;
+    ? (scoreObj.playerScore += 1)
+    : (scoreObj.computerScore += 1);
 }
-
-
-function game(){
-
-    while(playerScore <= 5 || computerScore <= 5){
-        playRound(prompt("Choose", getComputerChoice))
-    }
+function game() {
+  while (scoreObj.playerScore <= 5 && scoreObj.computerScore <= 5) {
+    playRound(prompt("Choose"), getComputerChoice());
+    console.log(`playerScore ${scoreObj.playerScore}`);
+    console.log(`computerScore ${scoreObj.computerScore}`);
+  }
+  return 
 }
-
-console.log(getComputerChoice());
-
-console.log(playRound("rock", getComputerChoice()));
+//console.log(getComputerChoice());
+console.log(game());

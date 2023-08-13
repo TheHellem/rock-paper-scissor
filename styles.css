@@ -6,7 +6,8 @@
   font-family: roboto;
   letter-spacing: 1.2px;
   font-size: 10px;
-  
+  --header: black;
+  --header-text: white;
 }
 
 html {
@@ -19,11 +20,19 @@ header {
   display: flex;
   justify-content: center;
   padding: 2rem;
-  /* background-color: var(--header); */
+  background-color: var(--header); 
+  color: var(--header-text);
 }
 
 h1 {
-    font-size: 3rem;
+  font-size: 3rem;
+}
+
+button {
+  border-radius: 50%;
+  border-style: none;
+  padding: -5rem;
+  background-color: white;
 }
 
 footer {
@@ -47,7 +56,19 @@ footer {
   align-items: center;
 }
 
+.score-container {
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: row;
+}
+
+.score {
+  font-size: 8rem;
+  padding: 3rem;
+}
+
 .options {
   width: 150px;
   height: auto;
+  padding: 2rem;
 }

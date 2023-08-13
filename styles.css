@@ -8,6 +8,8 @@
   font-size: 10px;
   --header: black;
   --header-text: white;
+  --computer-score: #ff0000;
+  --player-score: #0000ff;
 }
 
 html {
@@ -71,12 +73,49 @@ footer {
 }
 
 .score {
-  font-size: 8rem;
-  padding: 3rem;
+  font-size: 6rem;
+  padding: 1.5rem;
 }
+
+
+
 
 .options {
   width: 150px;
   height: auto;
   padding: 2rem;
+}
+
+#computer-score {
+    color: var(--computer-score);
+}
+
+#player-score {
+    color: var(--player-score);
+}
+
+
+
+.enemy {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top: 0;
+    left: 0;
+
+  }
+
+
+#computer {
+    width: 30rem;
+    height: auto;
+    position: relative;
+}
+
+#computer-screen {
+    width: 11rem;
+    height: auto;
+    position: absolute;
+    padding: 7rem 9rem 10rem 5rem;
 }

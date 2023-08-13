@@ -25,6 +25,7 @@ function playRound(playerSelectionRaw, computerSelection) {
     ? (scoreObj.playerScore += 1)
     : (scoreObj.computerScore += 1);
 }
+/*
 function game() {
   while (scoreObj.playerScore <= 5 && scoreObj.computerScore <= 5) {
     playRound(prompt("Choose"), getComputerChoice());
@@ -33,5 +34,6 @@ function game() {
   }
   return 
 }
+*/
 //console.log(getComputerChoice());
 console.log(game());

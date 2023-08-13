@@ -1,31 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock Paper Scissors</title>
 </head>
-<body>
-    <div class="header">
-        <h1>Rock, Paper, Scissor</h1>
-        <p></p>
-    </div>
-    <div class="main">
-        <div class="score-container">
 
+<body>
+    <header>
+        <h1>Rock, Paper, Scissor</h1>
+        <p>Best of five games win!</p>
+    </header>
+    <main c>
+        <div class="score-container">
+            <div class="score" id="computer-score">0</div>
+            <div class="score" id="player-score">0</div>
         </div>
         <div class="game">
-
-            <div class="user-input">
-                <button class="btn" id="rock"></button>
+            <div class="computer-output">
+                <!-- <img src="/public/test.gif" alt=""> 
+                insert some form of animation here -->
             </div>
-
+            <div class="user-input">
+                <button class="btn" id="rock">
+                    <img src="/public/rock.png" alt="rock">
+                </button>
+                <button class="btn" id="paper">
+                    <img src="/public/paper.png" alt="paper">
+                </button>
+                <button class="btn" id="scissor">
+                    <img src="/public/scissor.png" alt="scissor">
+                </button>
+            </div>
         </div>
-    </div>
-    <div class="footer">
-
-    </div>
-    
+    </main>
+    <footer>
+        <p>@ Henrik Hellem 2023</p>
+    </footer>
     <script src="game.js"></script>
 </body>
+
 </html>

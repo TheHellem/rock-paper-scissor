@@ -1,0 +1,53 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto+Condensed:700|Roboto:100,300,700");
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: roboto;
+  letter-spacing: 1.2px;
+  font-size: 10px;
+  
+}
+
+html {
+  /* footer support */
+  position: relative;
+  min-height: 100%;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+  /* background-color: var(--header); */
+}
+
+h1 {
+    font-size: 3rem;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  width: 100%;
+  padding: 1rem;
+  color: var(--primary-light);
+  font-size: 2rem;
+}
+
+.header-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.options {
+  width: 150px;
+  height: auto;
+}

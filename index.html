@@ -16,17 +16,21 @@
         </div>
     </header>
     <main>
+
         <div class="score-container">
-            <span class="score" id="computer-score">0</span>
-            <span class="score">-</span>
-            <span class="score" id="player-score">0</span>
+            <div class="score-container-setup">
+                <span class="player-score">YOU</span>
+                <span class="score player-score" id="player-score">0</span>
+            </div>
+            <div class="score-container-setup">
+                <span class="computer-score">COMPUTER</span>
+                <span class="score computer-score" id="computer-score">0</span>
+            </div>
         </div>
         <div class="game">
             <div class="enemy parent">
                 <img src="/public/computer.jpg" alt="computer" id="computer" class="image1">
-
-                <img src="/public/default_screen.jpg" alt="computer screen" id="computer-screen" class="image2">
-
+                <img src="/public/screen_rock.jpg" alt="computer screen" id="computer-screen" class="image2">
             </div>
             <div class="user-input">
                 <button class="btn" id="rock">

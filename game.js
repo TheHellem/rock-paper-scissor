@@ -1,63 +1,35 @@
-const playerChoice = document.querySelectorAll(".options");
-const computerScoreDisplay = document.querySelector("#computer-score");
-
-const options = {
-  0: "rock",
-  1: "paper",
-  2: "scissor",
-};
+const playerOptions = document.querySelectorAll(".options");
 
 let scoreObj = {
   playerScore: 0,
   computerScore: 0,
 };
 
-const getComputerChoice = () => options[Math.floor(Math.random() * 3)];
+const getComputerChoice = () => {
+  const computerOptions = ["rock", "paper", "scissor"];
+  const computerChoice =  computerOptions[Math.floor(Math.random() * 3)];
+  return computerChoice
+};
 
-function playRound(playerSelection, computerSelection) {
-  // Er map en dårlig ide, hjelpefunksjon i stedet? Skal ikke printe noe på skjerm.
-  const resultMap = new Map();
-
-  console.log("player: " + playerSelection);
-  console.log("computer: " + computerSelection);
-
-  if (playerSelection === computerSelection)
-    resultMap.set("tie", `It is a tie! You both chose ${playerSelection}!`);
-  else {
+function game(playerSelection, computerSelection) {
+  if (scoreObj.playerScore < 5 && scoreObj.computerScore < 5) {
     (playerSelection === "rock" && computerSelection === "scissor") ||
     (playerSelection === "scissor" && computerSelection === "paper") ||
     (playerSelection === "paper" && computerSelection === "rock")
-      ? resultMap.set("winner", `You won this round!  `)
+      ? (scoreObj.playerScore += 1)
       : (scoreObj.computerScore += 1);
+
+    document.querySelector("#player-score").textContent = scoreObj.playerScore;
+    document.querySelector("#computer-score").textContent =
+      scoreObj.computerScore;
   }
-  return resultMap;
+  else{
+    console.log("finito")
+  }
 }
 
-const getPlayerChoice = (e) => {
-  console.log(playRound(e.target.id, getComputerChoice()));
-};
-playerChoice.forEach((item) => {
-  item.addEventListener("click", getPlayerChoice);
+playerOptions.forEach((option) => {
+  option.addEventListener("click", (e) => {
+    game(e.target.id, getComputerChoice());
+  });
 });
-
-/*
-
-
-  (playerSelection === "rock" && computerSelection === "scissor") ||
-    (playerSelection === "scissor" && computerSelection === "paper") ||
-    (playerSelection === "paper" && computerSelection === "rock")
-    ? (scoreObj.playerScore += 1)
-    : (scoreObj.computerScore += 1);
-}
-
-function game() {
-  while (scoreObj.playerScore <= 5 && scoreObj.computerScore <= 5) {
-    playRound(prompt("Choose"), getComputerChoice());
-    console.log(`playerScore ${scoreObj.playerScore}`);
-    console.log(`computerScore ${scoreObj.computerScore}`);
-  }
-  return 
-}
-*/
-//console.log(getComputerChoice());
-console.log(playerChoice);

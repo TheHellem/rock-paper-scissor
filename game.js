@@ -6,12 +6,17 @@ let scoreObj = {
 };
 
 const getComputerChoice = () => {
+  // One cool idea here is to link to unsplash api to get different images
   const computerOptions = ["rock", "paper", "scissor"];
   const computerChoice =  computerOptions[Math.floor(Math.random() * 3)];
+  document.getElementById("computer-screen").src = `/public/screen_${computerChoice}.jpg`
   return computerChoice
 };
 
 function game(playerSelection, computerSelection) {
+
+
+  
   if (scoreObj.playerScore < 5 && scoreObj.computerScore < 5) {
     (playerSelection === "rock" && computerSelection === "scissor") ||
     (playerSelection === "scissor" && computerSelection === "paper") ||
@@ -20,8 +25,7 @@ function game(playerSelection, computerSelection) {
       : (scoreObj.computerScore += 1);
 
     document.querySelector("#player-score").textContent = scoreObj.playerScore;
-    document.querySelector("#computer-score").textContent =
-      scoreObj.computerScore;
+    document.querySelector("#computer-score").textContent = scoreObj.computerScore;
   }
   else{
     console.log("finito")

@@ -14,9 +14,8 @@ const getComputerChoice = () => {
 };
 
 function game(playerSelection, computerSelection) {
-
-
-  
+  playerOptions.forEach(item => item.style.background = "white")
+  document.getElementById(`${playerSelection}`).style.background = "#0000ff"
   if (scoreObj.playerScore < 5 && scoreObj.computerScore < 5) {
     (playerSelection === "rock" && computerSelection === "scissor") ||
     (playerSelection === "scissor" && computerSelection === "paper") ||

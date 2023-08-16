@@ -89,7 +89,17 @@ footer {
   width: 150px;
   height: auto;
   padding: 2rem;
+  margin: 1rem;
+  border:5px black solid;
+  border-radius: 10%;
 }
+
+/* 
+Breaks when game.js overwrite background, https://stackoverflow.com/questions/11371550/change-hover-css-properties-with-javascript could be a fix
+
+.options:hover {
+    background-color: #FBF719;
+} */
 
 .computer-score {
   color: var(--computer-score);
@@ -129,8 +139,8 @@ footer {
 }
 
 #computer-screen {
-  width: 12rem;
+  width: 11.5rem;
   height: auto;
   position: absolute;
-  padding: 7rem 9rem 10rem 5rem;
+  padding: 7rem 9.2rem 10rem 5rem;
 }

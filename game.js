@@ -1,4 +1,5 @@
 const playerOptions = document.querySelectorAll(".options");
+let computerScreen = document.getElementById("computer-screen") 
 
 let scoreObj = {
   playerScore: 0,
@@ -9,9 +10,21 @@ const getComputerChoice = () => {
   // One cool idea here is to link to unsplash api to get different images
   const computerOptions = ["rock", "paper", "scissor"];
   const computerChoice =  computerOptions[Math.floor(Math.random() * 3)];
-  document.getElementById("computer-screen").src = `/public/screen_${computerChoice}.jpg`
+  computerScreen.src = `/public/screen_${computerChoice}.jpg`
   return computerChoice
 };
+
+function gameEnd(winner){
+ playerOptions.forEach((item) => item.style.visibility = "hidden")
+ document.querySelector("#reset").style.visibility = "visible"
+ switch(winner){
+  case "computer":
+    computerScreen.src = "/public/happy.png";
+    break;
+  case "player":
+    computerScreen.src = "/public/sad.png"
+ }
+}
 
 function game(playerSelection, computerSelection) {
   playerOptions.forEach(item => item.style.background = "white")
@@ -27,9 +40,11 @@ function game(playerSelection, computerSelection) {
     document.querySelector("#computer-score").textContent = scoreObj.computerScore;
   }
   else{
-    console.log("finito")
+    (scoreObj.playerScore > scoreObj.computerScore) ? gameEnd("player") : gameEnd("computer")
   }
 }
+
+const playAgain = () => location.reload()
 
 playerOptions.forEach((option) => {
   option.addEventListener("click", (e) => {

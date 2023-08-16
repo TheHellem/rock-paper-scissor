@@ -19,6 +19,7 @@ function gameEnd(winner){
  document.querySelector("#reset").style.visibility = "visible"
  switch(winner){
   case "computer":
+    computerScreen.style.width = "9rem" // ad-hoc fix
     computerScreen.src = "/public/happy.png";
     break;
   case "player":

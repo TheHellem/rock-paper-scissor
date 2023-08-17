@@ -21,7 +21,7 @@ function gameEnd(winner) {
   switch (winner) {
     case "computer":
       computerScreen.style.width = "9rem"; // ad-hoc fix
-      computerScreen.src = "public/happy.png";
+      computerScreen.src = "./public/happy.png";
       endMessage.textContent = "You lost"
       break;
     case "player":

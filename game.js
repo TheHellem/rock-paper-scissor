@@ -11,7 +11,7 @@ const getComputerChoice = () => {
   // One cool idea here is to link to unsplash api to get different images
   const computerOptions = ["rock", "paper", "scissor"];
   const computerChoice = computerOptions[Math.floor(Math.random() * 3)];
-  computerScreen.src = `./public/screen_${computerChoice}.jpg`;
+  computerScreen.src = `public/screen_${computerChoice}.jpg`;
   return computerChoice;
 };
 
@@ -21,11 +21,11 @@ function gameEnd(winner) {
   switch (winner) {
     case "computer":
       computerScreen.style.width = "9rem"; // ad-hoc fix
-      computerScreen.src = "./public/happy.png";
+      computerScreen.src = "public/happy.png";
       endMessage.textContent = "You lost"
       break;
     case "player":
-      computerScreen.src = "./public/sad.png";
+      computerScreen.src = "public/sad.png";
       endMessage.textContent = "You won!"
   }
   endMessage.style.visibility = "visible"

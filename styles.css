@@ -33,7 +33,6 @@ h1 {
 }
 
 button {
-  border-radius: 50%;
   border-style: none;
   padding: -5rem;
   background-color: white;
@@ -144,3 +143,23 @@ Breaks when game.js overwrite background, https://stackoverflow.com/questions/11
   position: absolute;
   padding: 7rem 9.2rem 10rem 5rem;
 }
+
+.reset {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  visibility: hidden;
+  flex-direction: column;
+}
+
+.reset-message {
+  font-size: 1.5rem;
+  padding-bottom: 2rem;
+}
+
+#reset {
+  font-size: 2rem;
+  border: 5px black solid;
+  padding:1.5rem ;
+}
+
